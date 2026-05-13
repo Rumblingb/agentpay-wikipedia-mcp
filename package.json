@@ -1,0 +1,24 @@
+{
+  "name": "agentpay-wikipedia-mcp",
+  "version": "1.1.0",
+  "description": "Wikipedia MCP Server — Free knowledge access for AI agents with AgentPay Pro upsell",
+  "type": "module",
+  "main": "server.py",
+  "scripts": {
+    "start": "python3 server.py",
+    "start:pro": "python3 server.py --pro-key YOUR_PRO_KEY"
+  },
+  "keywords": ["mcp", "wikipedia", "agentpay", "ai", "model-context-protocol"],
+  "author": "AgentPay Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgentPayLabs/agentpay-wikipedia-mcp"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "mcp": ">=1.0.0"
+  }
+}

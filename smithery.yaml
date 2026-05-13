@@ -1,0 +1,31 @@
+name: agentpay-wikipedia-mcp
+displayName: Wikipedia MCP (AgentPay)
+description: >-
+  Free knowledge access for AI agents. Search, read, and explore millions of
+  Wikipedia articles with zero API keys. 7 tools: search, read articles, get
+  summaries, browse categories, discover language versions, random articles,
+  and page metadata. Rate-limited to 50 free requests. Get unlimited access
+  with AgentPay Pro.
+
+homepage: https://github.com/AgentPayLabs/agentpay-wikipedia-mcp
+repository: https://github.com/AgentPayLabs/agentpay-wikipedia-mcp
+runtime: python
+license: MIT
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      proKey:
+        type: string
+        description: >-
+          AgentPay Pro key for unlimited usage. Get yours at
+          https://buy.stripe.com/5kQ3cxflRabW9PW1AD1oI0r
+        default: ""
+  commandFunction: |
+    (config) => {
+      const args = ['server.py'];
+      if (config.proKey) args.push('--pro-key', config.proKey);
+      return {command: 'python3', args};
+    }
